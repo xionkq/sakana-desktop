@@ -2,9 +2,9 @@
   "name": "sakana-desktop",
   "version": "1.0.0",
   "description": "🐟「Sakana! Desktop」石蒜虚拟器",
-  "main": "index.js",
+  "main": "src/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
