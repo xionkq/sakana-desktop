@@ -12,8 +12,7 @@
   },
   "author": "xionkq",
   "homepage": "https://github.com/xionkq/sakana-desktop#readme",
-  "dependencies": {
-    "electron": "^27.0.2",
-    "sakana": "^1.0.8"
+  "devDependencies": {
+    "electron": "^27.0.2"
   }
 }
