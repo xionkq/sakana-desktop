@@ -1,5 +1,5 @@
+# Dependency directories
 node_modules
-/out
 
 # local env files
 .env.local
@@ -11,3 +11,9 @@ node_modules
 
 #Electron-builder output
 /dist_electron
+
+# Vite
+.vite/
+
+# Electron-Forge
+out/
