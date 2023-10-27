@@ -9,11 +9,11 @@ const createWindow = () => {
       preload: path.join(__dirname, 'preload.js'),
     },
   })
-  // win.loadFile('src/index.html')
   if (MAIN_WINDOW_VITE_DEV_SERVER_URL) {
-    win.loadURL(MAIN_WINDOW_VITE_DEV_SERVER_URL);
+    // MAIN_WINDOW_VITE_DEV_SERVER_URL是vite启动的服务器，相当于项目根目录
+    win.loadURL(`${MAIN_WINDOW_VITE_DEV_SERVER_URL}/src/index.html`);
   } else {
-    win.loadFile(path.join(__dirname, `../renderer/${MAIN_WINDOW_VITE_NAME}/src/index.html`));
+    win.loadFile(path.join(__dirname, `../renderer/${MAIN_WINDOW_VITE_NAME}/index.html`));
   }
   win.webContents.openDevTools()
 }
