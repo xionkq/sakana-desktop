@@ -11,6 +11,8 @@ const createWindow = () => {
       preload: path.join(__dirname, 'preload.js'),
     },
     frame: false, // 去掉放大缩小按钮
+    resizable: false,
+    transparent: true,
   })
   win.setMenu(null)
   if (MAIN_WINDOW_VITE_DEV_SERVER_URL) {
