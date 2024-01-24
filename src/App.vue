@@ -1,8 +1,13 @@
+<script setup>
+import Sakana from "./components/Sakana.vue";
+</script>
+
 <template>
-  <h1>💖 Hello World!</h1>
-  <p>Welcome to your Electron application.</p>
+  <Sakana />
 </template>
 
-<script setup>
-console.log('👋 This message is being logged by "App.vue", included via Vite');
-</script>
+<style>
+body {
+  margin: unset;
+}
+</style>
