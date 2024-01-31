@@ -1,22 +1,23 @@
-import * as electron from "electron";
-
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, Tray, Menu, nativeImage } = require('electron')
 const path = require('node:path')
 
+let win: any
+
 const createWindow = () => {
-  const win = new BrowserWindow({
+  win = new BrowserWindow({
     width: 150,
     height: 300,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
-    frame: false, // 去掉放大缩小按钮
+    frame: false, // 去掉右上角放大缩小按钮
     resizable: false,
     transparent: true,
   })
   win.setMenu(null)
+
+  // MAIN_WINDOW_VITE_DEV_SERVER_URL是vite启动的服务器，相当于项目根目录
   if (MAIN_WINDOW_VITE_DEV_SERVER_URL) {
-    // MAIN_WINDOW_VITE_DEV_SERVER_URL是vite启动的服务器，相当于项目根目录
     win.loadURL(`${MAIN_WINDOW_VITE_DEV_SERVER_URL}/src/index.html`);
   } else {
     win.loadFile(path.join(__dirname, `../renderer/${MAIN_WINDOW_VITE_NAME}/index.html`));
@@ -24,6 +25,31 @@ const createWindow = () => {
   win.webContents.openDevTools()
 }
 
+const createTray = () => {
+  const icon = nativeImage.createFromPath(
+    // TODO: Overwrite path
+    path.join(__dirname, '../../src/assets/logo.png')
+  );
+  const tray = new Tray(icon)
+  tray.setToolTip('「Sakana! Desktop」')
+
+  const contextMenu = Menu.buildFromTemplate([
+    {
+      label: '退出',
+      click: () => {
+        app.quit()
+      }
+    },
+  ])
+  tray.setContextMenu(contextMenu)
+
+  win.hide()
+  tray.on('click', () => {
+    win.show();
+  });
+}
+
 app.whenReady().then(() => {
   createWindow()
+  createTray()
 })
