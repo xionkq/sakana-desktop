@@ -13,7 +13,6 @@ onMounted(() => {
 
 <template>
   <div class="box">
-    <div class="drag"></div>
     <div class="sakana-box"></div>
   </div>
 </template>
@@ -24,16 +23,6 @@ onMounted(() => {
   height: 300px;
   overflow: hidden;
   position: relative;
-
-  .drag {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 150px;
-    height: 25px;
-    z-index: 10;
-    -webkit-app-region: drag
-  }
 
   .sakana-box {
     height: 400px !important;
