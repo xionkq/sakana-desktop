@@ -1,4 +1,4 @@
-const { app, BrowserWindow, Tray, Menu, nativeImage } = require('electron')
+const { app, BrowserWindow, Tray, Menu, nativeImage, ipcMain } = require('electron')
 const path = require('node:path')
 
 let win: any
@@ -15,6 +15,7 @@ const createWindow = () => {
     transparent: true,
   })
   win.setMenu(null)
+  win.setAlwaysOnTop(true)
 
   // MAIN_WINDOW_VITE_DEV_SERVER_URL是vite启动的服务器，相当于项目根目录
   if (MAIN_WINDOW_VITE_DEV_SERVER_URL) {
@@ -49,7 +50,14 @@ const createTray = () => {
   });
 }
 
+const createListener = () => {
+  ipcMain.on('hide-win', () => {
+    win.hide()
+  })
+}
+
 app.whenReady().then(() => {
   createWindow()
   createTray()
+  createListener()
 })
