@@ -5,6 +5,8 @@ import ToggleIcon from "./icons/ToggleIcon.vue";
 import CloseIcon from "./icons/CloseIcon.vue";
 import { ref } from "vue";
 
+defineEmits(['checkout'])
+
 const isToolbarShow = ref(false)
 
 function hideWindow() {
@@ -25,7 +27,7 @@ function switchToolbar() {
     </template>
     <template v-else>
       <div class="drag-box"></div>
-      <div class="icon-box">
+      <div class="icon-box" @click="$emit('checkout')">
         <ToggleIcon />
       </div>
       <div class="icon-box" @click="switchToolbar">
@@ -42,7 +44,6 @@ function switchToolbar() {
 .toolbar {
   width: 100%;
   height: 25px;
-  backdrop-filter: blur(6px);
   z-index: 20;
   display: flex;
   justify-content: flex-end;
@@ -50,6 +51,7 @@ function switchToolbar() {
 
   &.show {
     background: rgba(255, 255, 255, .7);
+    backdrop-filter: blur(6px);
   }
 
   .drag-box {
