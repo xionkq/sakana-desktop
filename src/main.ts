@@ -1,4 +1,4 @@
-const { app, BrowserWindow, Tray, Menu, nativeImage, ipcMain } = require('electron')
+const { app, BrowserWindow, Tray, Menu, nativeImage, ipcMain, shell } = require('electron')
 const path = require('node:path')
 
 let win: any
@@ -53,6 +53,9 @@ const createTray = () => {
 const createListener = () => {
   ipcMain.on('hide-win', () => {
     win.hide()
+  })
+  ipcMain.on('open-link', (event, link) => {
+    shell.openExternal(link)
   })
 }
 

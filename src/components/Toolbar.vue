@@ -4,6 +4,9 @@ import HideIcon from "./icons/HideIcon.vue";
 import ToggleIcon from "./icons/ToggleIcon.vue";
 import CloseIcon from "./icons/CloseIcon.vue";
 import { ref } from "vue";
+import GithubIcon from "./icons/GithubIcon.vue";
+import {shell} from "electron";
+// import { shell } from 'electron';
 
 defineEmits(['checkout'])
 
@@ -16,6 +19,10 @@ function hideWindow() {
 function switchToolbar() {
   isToolbarShow.value = !isToolbarShow.value
 }
+
+function goToGithub() {
+  window.openLink('https://github.com/xionkq/sakana-desktop')
+}
 </script>
 
 <template>
@@ -27,6 +34,9 @@ function switchToolbar() {
     </template>
     <template v-else>
       <div class="drag-box"></div>
+      <div class="icon-box" @click="goToGithub">
+        <GithubIcon />
+      </div>
       <div class="icon-box" @click="$emit('checkout')">
         <ToggleIcon />
       </div>
