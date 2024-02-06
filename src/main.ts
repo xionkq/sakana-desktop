@@ -1,7 +1,7 @@
-const { app, BrowserWindow, Tray, Menu, nativeImage, ipcMain, shell } = require('electron')
-const path = require('node:path')
+import { app, BrowserWindow, Tray, Menu, nativeImage, ipcMain, shell } from 'electron'
+import path from 'node:path'
 
-let win: any
+let win: BrowserWindow
 
 const createWindow = () => {
   win = new BrowserWindow({

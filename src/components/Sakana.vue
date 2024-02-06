@@ -32,7 +32,7 @@ defineExpose({ checkout })
 
 <template>
   <div class="box">
-    <div class="sakana-box" @click="checkout"></div>
+    <div class="sakana-box"></div>
   </div>
 </template>
 

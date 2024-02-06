@@ -1,12 +1,10 @@
 <script setup lang="ts">
+import { ref } from "vue";
 import ShowIcon from "./icons/ShowIcon.vue";
 import HideIcon from "./icons/HideIcon.vue";
 import ToggleIcon from "./icons/ToggleIcon.vue";
 import CloseIcon from "./icons/CloseIcon.vue";
-import { ref } from "vue";
 import GithubIcon from "./icons/GithubIcon.vue";
-import {shell} from "electron";
-// import { shell } from 'electron';
 
 defineEmits(['checkout'])
 
