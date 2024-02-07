@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import ShowIcon from "./icons/ShowIcon.vue";
-import HideIcon from "./icons/HideIcon.vue";
-import ToggleIcon from "./icons/ToggleIcon.vue";
-import CloseIcon from "./icons/CloseIcon.vue";
-import GithubIcon from "./icons/GithubIcon.vue";
+import { ref } from 'vue'
+import ShowIcon from './icons/ShowIcon.vue'
+import HideIcon from './icons/HideIcon.vue'
+import ToggleIcon from './icons/ToggleIcon.vue'
+import CloseIcon from './icons/CloseIcon.vue'
+import GithubIcon from './icons/GithubIcon.vue'
 
 defineEmits(['checkout'])
 
@@ -58,7 +58,7 @@ function goToGithub() {
   align-items: center;
 
   &.show {
-    background: rgba(255, 255, 255, .7);
+    background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(6px);
   }
 

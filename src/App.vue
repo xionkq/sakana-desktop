@@ -1,13 +1,13 @@
 <script setup>
-import Sakana from "./components/Sakana.vue";
-import Toolbar from "./components/Toolbar.vue";
-import {ref} from "vue";
+import Sakana from './components/Sakana.vue'
+import Toolbar from './components/Toolbar.vue'
+import { ref } from 'vue'
 
 const sakanaRef = ref(null)
 
-function checkout () {
+function checkout() {
   if (!sakanaRef.value) {
-    return;
+    return
   }
   sakanaRef.value.checkout()
 }

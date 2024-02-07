@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Sakana from 'sakana';
-import {onMounted, ref, Ref} from "vue";
+import Sakana from 'sakana'
+import { onMounted, ref, Ref } from 'vue'
 
 enum Character {
   chisato = 'chisato',
@@ -13,18 +13,18 @@ const currentCharacter = ref(Character.takina)
 onMounted(() => {
   sakana.value = Sakana.init({
     el: '.sakana-box', // 启动元素node或选择器
-    scale: .5, // 缩放倍数
+    scale: 0.5, // 缩放倍数
     canSwitchCharacter: true, // 允许换角色
-  });
+  })
 })
 
-function checkout () {
+function checkout() {
   if (!sakana.value) {
     return
   }
   const isChisato = currentCharacter.value === Character.chisato
   currentCharacter.value = isChisato ? Character.takina : Character.chisato
-  sakana.value.setCharacter(currentCharacter.value);
+  sakana.value.setCharacter(currentCharacter.value)
 }
 
 defineExpose({ checkout })
