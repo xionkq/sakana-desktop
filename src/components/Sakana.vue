@@ -38,7 +38,7 @@ defineExpose({ checkout })
 
 <style scoped>
 .box {
-  width: 150px;
+  width: 400px;
   height: 300px;
   overflow: hidden;
   position: relative;
@@ -46,7 +46,7 @@ defineExpose({ checkout })
   .sakana-box {
     height: 400px !important;
     transform-origin: unset !important;
-    left: -180px;
+    left: -55px;
   }
 }
 </style>

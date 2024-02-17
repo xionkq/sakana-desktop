@@ -50,7 +50,7 @@ function goToGithub() {
 
 <style scoped>
 .toolbar {
-  width: 100%;
+  width: 150px;
   height: 25px;
   z-index: 20;
   display: flex;
