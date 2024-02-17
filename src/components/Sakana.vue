@@ -3,12 +3,12 @@ import Sakana from 'sakana'
 import { onMounted, ref, Ref } from 'vue'
 
 enum Character {
-  chisato = 'chisato',
-  takina = 'takina',
+  CHISATO = 'CHISATO',
+  TAKINA = 'TAKINA',
 }
 
 const sakana: Ref<null | any> = ref(null)
-const currentCharacter = ref(Character.takina)
+const currentCharacter = ref(Character.TAKINA)
 
 onMounted(() => {
   sakana.value = Sakana.init({
@@ -22,8 +22,8 @@ function checkout() {
   if (!sakana.value) {
     return
   }
-  const isChisato = currentCharacter.value === Character.chisato
-  currentCharacter.value = isChisato ? Character.takina : Character.chisato
+  const isChisato = currentCharacter.value === Character.CHISATO
+  currentCharacter.value = isChisato ? Character.TAKINA : Character.CHISATO
   sakana.value.setCharacter(currentCharacter.value)
 }
 
