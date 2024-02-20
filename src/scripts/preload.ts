@@ -9,9 +9,9 @@ contextBridge.exposeInMainWorld('openLink', (link: string) => {
 })
 
 contextBridge.exposeInMainWorld('winPenetrateTrue', () => {
-  ipcRenderer.invoke("win-penetrate-true")
+  ipcRenderer.invoke('win-penetrate-true')
 })
 
 contextBridge.exposeInMainWorld('winPenetrateFalse', (link: string) => {
-  ipcRenderer.invoke("win-penetrate-false")
+  ipcRenderer.invoke('win-penetrate-false')
 })

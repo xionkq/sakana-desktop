@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Sakana from './components/Sakana.vue'
 import Toolbar from './components/Toolbar.vue'
-import {computed, onMounted, ref} from 'vue'
+import { onMounted, ref } from 'vue'
 
 const sakanaRef = ref(null)
 const isSakanaClicked = ref(false)
@@ -14,14 +14,13 @@ function isNotAllowPenetrate(classList: DOMTokenList) {
 }
 
 onMounted(() => {
-  window.addEventListener("mousemove", event => {
-    if (isSakanaClicked.value || isNotAllowPenetrate((event.target as Element).classList)){
+  window.addEventListener('mousemove', (event) => {
+    if (isSakanaClicked.value || isNotAllowPenetrate((event.target as Element).classList)) {
       window.winPenetrateFalse()
-    }
-    else {
+    } else {
       window.winPenetrateTrue()
     }
-  });
+  })
 
   const sakanaCharacter = document.getElementsByClassName('sakana-character')[0]
   sakanaCharacter.addEventListener('mousedown', () => {
