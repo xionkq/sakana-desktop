@@ -3,8 +3,8 @@ import Sakana from 'sakana'
 import { onMounted, ref, Ref } from 'vue'
 
 enum Character {
-  CHISATO = 'CHISATO',
-  TAKINA = 'TAKINA',
+  CHISATO = 'chisato',
+  TAKINA = 'takina',
 }
 
 const sakana: Ref<null | any> = ref(null)

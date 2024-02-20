@@ -8,7 +8,7 @@ import GithubIcon from './icons/GithubIcon.vue'
 
 defineEmits(['checkout'])
 
-const isToolbarShow = ref(false)
+const isToolbarShow = ref(true)
 
 function hideWindow() {
   window.hideWin()
@@ -32,6 +32,7 @@ function goToGithub() {
     </template>
     <template v-else>
       <div class="drag-box"></div>
+      <!--      TODO: switch SVG to PNG-->
       <div class="icon-box" @click="goToGithub">
         <GithubIcon />
       </div>
