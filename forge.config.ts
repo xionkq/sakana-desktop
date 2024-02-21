@@ -6,7 +6,28 @@ import { MakerRpm } from '@electron-forge/maker-rpm'
 import { VitePlugin } from '@electron-forge/plugin-vite'
 
 const config: ForgeConfig = {
-  packagerConfig: {},
+  packagerConfig: {
+    icon: '/public/logo.png',
+    ignore: [
+      new RegExp('/.idea'),
+      // new RegExp('/.vite'),
+      new RegExp('/node_modules'),
+      new RegExp('/src'),
+      new RegExp('/.editorconfig'),
+      new RegExp('/.gitignore'),
+      new RegExp('/.npmrc'),
+      new RegExp('/.prettierignore'),
+      new RegExp('/.prettierrc'),
+      new RegExp('/forge.config.ts'),
+      new RegExp('/README.md'),
+      new RegExp('/tsconfig.json'),
+      new RegExp('/vite.main.config.ts'),
+      new RegExp('/vite.preload.config.ts'),
+      new RegExp('/vite.renderer.config.ts'),
+
+      // /^(?!package.json|main.ts|index.html)/,
+    ],
+  },
   rebuildConfig: {},
   makers: [new MakerSquirrel({}), new MakerZIP({}, ['darwin']), new MakerRpm({}), new MakerDeb({})],
   plugins: [

@@ -13,6 +13,7 @@ const createWindow = () => {
     frame: false, // 去掉右上角放大缩小按钮
     resizable: false,
     transparent: true,
+    icon: path.join(__dirname, '../../public/logo.png'),
   })
   win.setMenu(null)
   win.setAlwaysOnTop(true)
@@ -23,14 +24,11 @@ const createWindow = () => {
   } else {
     win.loadFile(path.join(__dirname, `../renderer/${MAIN_WINDOW_VITE_NAME}/index.html`))
   }
-  win.webContents.openDevTools()
+  process.env.NODE_ENV === 'development' && win.webContents.openDevTools()
 }
 
 const createTray = () => {
-  const icon = nativeImage.createFromPath(
-    // TODO: Overwrite path
-    path.join(__dirname, '../../src/assets/logo.png')
-  )
+  const icon = nativeImage.createFromPath(path.join(__dirname, '../../public/logo.png'))
   const tray = new Tray(icon)
   tray.setToolTip('「Sakana! Desktop」')
 
@@ -44,7 +42,6 @@ const createTray = () => {
   ])
   tray.setContextMenu(contextMenu)
 
-  win.hide()
   tray.on('click', () => {
     win.show()
   })
