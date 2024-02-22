@@ -27,23 +27,22 @@ function goToGithub() {
   <div class="toolbar" :class="{ show: isToolbarShow }">
     <template v-if="!isToolbarShow">
       <div class="icon-box" @click="switchToolbar">
-        <HideIcon />
+        <img src="../assets/icon-hide.png" class="icon"  alt=""/>
       </div>
     </template>
     <template v-else>
       <div class="drag-box"></div>
-      <!--      TODO: switch SVG to PNG-->
       <div class="icon-box" @click="goToGithub">
-        <GithubIcon />
+        <img src="../assets/icon-github.png" class="icon"  alt=""/>
       </div>
       <div class="icon-box" @click="$emit('checkout')">
-        <ToggleIcon />
+        <img src="../assets/icon-toggle.png" class="icon"  alt=""/>
       </div>
       <div class="icon-box" @click="switchToolbar">
-        <ShowIcon />
+        <img src="../assets/icon-show.png" class="icon"  alt=""/>
       </div>
       <div class="icon-box" @click="hideWindow">
-        <CloseIcon />
+        <img src="../assets/icon-close.png" class="icon"  alt=""/>
       </div>
     </template>
   </div>
@@ -74,6 +73,11 @@ function goToGithub() {
     height: 20px;
     margin-left: 5px;
     cursor: pointer;
+
+    .icon {
+      width: 18px;
+      height: 18px;
+    }
   }
 }
 </style>
