@@ -1,10 +1,5 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import ShowIcon from './icons/ShowIcon.vue'
-import HideIcon from './icons/HideIcon.vue'
-import ToggleIcon from './icons/ToggleIcon.vue'
-import CloseIcon from './icons/CloseIcon.vue'
-import GithubIcon from './icons/GithubIcon.vue'
 
 defineEmits(['checkout'])
 
@@ -56,6 +51,7 @@ function goToGithub() {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  margin-top: 20px;
 
   &.show {
     background: rgba(255, 255, 255, 0.7);
