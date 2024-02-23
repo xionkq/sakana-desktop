@@ -6,7 +6,7 @@ import { onMounted, ref } from 'vue'
 const sakanaRef = ref(null)
 const isSakanaClicked = ref(false)
 
-const NOT_ALLOW_PENETRATE_LIST = ['sakana-character', 'toolbar', 'icon']
+const NOT_ALLOW_PENETRATE_LIST = ['sakana-character', 'toolbar', 'icon', 'drag-box']
 
 function isNotAllowPenetrate(classList: DOMTokenList) {
   const list = Array.from(classList)

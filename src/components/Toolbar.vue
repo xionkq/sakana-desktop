@@ -46,12 +46,13 @@ function goToGithub() {
 <style scoped>
 .toolbar {
   width: 150px;
-  height: 25px;
+  height: 20px;
   z-index: 20;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   margin-top: 20px;
+  padding: 2px;
 
   &.show {
     background: rgba(255, 255, 255, 0.7);
