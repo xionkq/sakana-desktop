@@ -22,22 +22,22 @@ function goToGithub() {
   <div class="toolbar" :class="{ show: isToolbarShow }">
     <template v-if="!isToolbarShow">
       <div class="icon-box" @click="switchToolbar">
-        <img src="../assets/icon-hide.png" class="icon"  alt=""/>
+        <img src="../assets/icon-hide.png" class="icon" alt="" />
       </div>
     </template>
     <template v-else>
       <div class="drag-box"></div>
       <div class="icon-box" @click="goToGithub">
-        <img src="../assets/icon-github.png" class="icon"  alt=""/>
+        <img src="../assets/icon-github.png" class="icon" alt="" />
       </div>
       <div class="icon-box" @click="$emit('checkout')">
-        <img src="../assets/icon-toggle.png" class="icon"  alt=""/>
+        <img src="../assets/icon-toggle.png" class="icon" alt="" />
       </div>
       <div class="icon-box" @click="switchToolbar">
-        <img src="../assets/icon-show.png" class="icon"  alt=""/>
+        <img src="../assets/icon-show.png" class="icon" alt="" />
       </div>
       <div class="icon-box" @click="hideWindow">
-        <img src="../assets/icon-close.png" class="icon"  alt=""/>
+        <img src="../assets/icon-close.png" class="icon" alt="" />
       </div>
     </template>
   </div>

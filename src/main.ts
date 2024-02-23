@@ -54,10 +54,10 @@ const createListener = () => {
   ipcMain.on('open-link', (event, link) => {
     shell.openExternal(link)
   })
-  ipcMain.handle('win-penetrate-true', (event, arg) => {
+  ipcMain.handle('win-penetrate-true', () => {
     win.setIgnoreMouseEvents(true, { forward: true })
   })
-  ipcMain.handle('win-penetrate-false', (event, arg) => {
+  ipcMain.handle('win-penetrate-false', () => {
     win.setIgnoreMouseEvents(false)
   })
 }
