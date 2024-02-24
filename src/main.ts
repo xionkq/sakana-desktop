@@ -14,6 +14,7 @@ const createWindow = () => {
     resizable: false,
     transparent: true,
     icon: path.join(__dirname, '../../public/logo.png'),
+    skipTaskbar: true, // 隐藏任务栏图标
   })
   win.setMenu(null)
   win.setAlwaysOnTop(true)
