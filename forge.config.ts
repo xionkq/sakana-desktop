@@ -7,7 +7,7 @@ import { VitePlugin } from '@electron-forge/plugin-vite'
 
 const config: ForgeConfig = {
   packagerConfig: {
-    icon: '/public/logo.png',
+    icon: './public/favicon',
     ignore: [
       new RegExp('/.idea'),
       // new RegExp('/.vite'),
@@ -24,12 +24,15 @@ const config: ForgeConfig = {
       new RegExp('/vite.main.config.ts'),
       new RegExp('/vite.preload.config.ts'),
       new RegExp('/vite.renderer.config.ts'),
-
-      // /^(?!package.json|main.ts|index.html)/,
     ],
   },
   rebuildConfig: {},
-  makers: [new MakerSquirrel({}), new MakerZIP({}, ['darwin']), new MakerRpm({}), new MakerDeb({})],
+  makers: [
+    new MakerSquirrel({}),
+    new MakerZIP({}, ['darwin']),
+    new MakerRpm({}),
+    new MakerDeb({}),
+  ],
   plugins: [
     new VitePlugin({
       // `build` can specify multiple entry builds, which can be Main process, Preload scripts, Worker process, etc.
