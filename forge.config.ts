@@ -31,7 +31,7 @@ const config: ForgeConfig = {
       name: '@electron-forge/publisher-github',
       config: {
         repository: {
-          owner: 'xion',
+          owner: 'xionkq',
           name: 'sakana-desktop'
         },
         prerelease: false,
