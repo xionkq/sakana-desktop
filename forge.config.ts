@@ -26,7 +26,19 @@ const config: ForgeConfig = {
       new RegExp('/vite.renderer.config.ts'),
     ],
   },
-  rebuildConfig: {},
+  publishers: [
+    {
+      name: '@electron-forge/publisher-github',
+      config: {
+        repository: {
+          owner: 'xion',
+          name: 'sakana-desktop'
+        },
+        prerelease: false,
+        draft: true,
+      }
+    }
+  ],
   makers: [
     new MakerSquirrel({}),
     new MakerZIP({}, ['darwin']),
