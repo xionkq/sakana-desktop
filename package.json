@@ -1,6 +1,6 @@
 {
   "name": "sakana-desktop",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "🐟「Sakana! Desktop」石蒜虚拟器",
   "main": ".vite/build/main.js",
   "authors": "xion",

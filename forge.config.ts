@@ -35,7 +35,7 @@ const config: ForgeConfig = {
           name: 'sakana-desktop'
         },
         prerelease: false,
-        draft: true,
+        draft: false,
       }
     }
   ],
